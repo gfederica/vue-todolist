@@ -13,14 +13,24 @@
 </head>
 <body>
     <div class="container" id="root">
-        <input type="text" placeholder="Da fare..." @keydown.enter="addToDo" v-model="newToDo.testo">
-        <button @click="addToDo">Aggiungi</button>
-        <ul v-if="toDoList.length > 0">
-            <li v-for="(toDo, index) in toDoList">{{toDo.testo}}<i class="fas fa-times" @click="removeToDo(index)"></i></li>
-        </ul>
-        <h1 v-else>Sicuro di aver fatto tutto?</h1>
+        <div class="input">
+            <input type="text" placeholder="Da fare..." @keydown.enter="addToDo" v-model="newToDo.testo">
+            <button @click="addToDo">Aggiungi</button>
+        </div>
+        <div class="wrapper">
+        <div class="triangle"></div>
+        <div class="triangle_negative"></div>
+            <ul v-if="toDoList.length > 0">
+                <li v-for="(toDo, index) in toDoList"><span :class="(toDo.completed)? 'done' : 'not_done_yet'" @click="toggleCompleted(index)">{{toDo.testo}}</span><i class="fas fa-times" @click="removeToDo(index)"></i> 
+                </li>
+            </ul>
+            <h1 v-else>Sicuro di aver fatto tutto?</h1>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
 </body>
 </html>
+
+<!-- :class="(this.toDoList.completed)? not_done_yet : done " -->
+

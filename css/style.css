@@ -9,7 +9,55 @@ body {
 }
 
 .container {
-    margin:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+
+.wrapper {
+    background-color: lightyellow;
+    padding: 20px 60px 20px 30px;
+    margin-top: 20px;
+    position: relative;
+}
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    border-color: goldenrod transparent transparent transparent;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+.triangle_negative {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+ul li {
+    padding: 6px 0;
+    border-bottom: 1px solid lightblue;
+    list-style-type: none;
+}
+
+.done {
+    color: red;
+    text-decoration: line-through;
+}
+
+.not_done_yet {
+    color: blue;
 }
 
 .fa-times {
@@ -17,6 +65,3 @@ body {
     padding-left: 8px;
 }
 
-ul li {
-    padding: 6px 0;
-}
