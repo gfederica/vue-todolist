@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    margin:20px;
+}
+
+.fa-times {
+    cursor: pointer;
+    padding-left: 8px;
+}
+
+ul li {
+    padding: 6px 0;
+}
